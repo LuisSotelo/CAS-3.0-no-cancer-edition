@@ -1,0 +1,138 @@
+﻿@using CAS.Models
+@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+    }
+
+    #loginForm {
+        margin-left: auto;
+        margin-right: auto;
+        width: 15%;
+    }
+
+    .cVdMsq {
+        height: 100vh;
+    }
+
+    .iNJnBw {
+        height: 10em;
+    }
+
+    .cfdhCI {
+        font-family: Dosis;
+        opacity: 0.96;
+        font-size: 40px;
+        font-weight: 600;
+        -webkit-text-align: left;
+        text-align: left;
+        color: #424547;
+        margin-bottom: 16px;
+    }
+
+    .kgmKfh {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .xYLGn {
+        margin-bottom: 16px;
+        position: relative;
+    }
+
+    .iYzlVq {
+        position: absolute;
+        top: 15px;
+        right: 8px;
+        z-index: 1000;
+    }
+
+    .P-root-138 {
+        width: 100%;
+        height: 60px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+        border-radius: 2px;
+        background-color: #793478;
+    }
+
+    .gsWXvc {
+        margin-top: 32px;
+    }
+
+    input  {
+        color: white;
+        font-size :0.875rem;
+    }
+</style>
+<link href="~/css/mui.css" rel="stylesheet" />
+<div class="StyledComponents__Main-cirAEV cVdMsq">
+    <div class="MuiGrid-typeContainer-1">
+        <div class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-36 MuiGrid-grid-md-8-58" style="height: 100%; background-color: rgb(255, 255, 255); background-image: url(../src/img/00c5296365ee8b3318ff543b06abdf70.svg); background-size: 100%; border-right: 1px solid rgb(121, 52, 120); margin-right: -2px;">
+            <div class="MuiGrid-typeContainer-1" style="height: 30%;">
+                <div class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-36" style="display: flex; align-items: flex-end; justify-content: center; padding-bottom: 64px;">
+                    <img class="styledComponents__Logo-dKjUGB iNJnBw" src="../src/img/logo-cas.svg">
+                </div>
+            </div>
+            <div class="MuiGrid-typeContainer-1 MuiGrid-justify-xs-center-16" style="height: 70%;">
+                <div class="MuiGrid-typeItem-2 MuiGrid-grid-xs-10-34 MuiGrid-grid-sm-8-45 MuiGrid-grid-md-6-56 MuiGrid-grid-lg-4-67">
+                    <div class="MuiGrid-typeContainer-1 MuiGrid-spacing-xs-16-21 MuiGrid-direction-xs-column-3">
+                        <div class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-36">
+                            <div class="styledComponents__Title-lfgxNN cfdhCI">Inicia sesión</div>
+                            <div class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-36">
+                                <div class="styledComponents__TextFieldsContainer-gsWrpy xYLGn">
+                                    <div style="font-size: 16px; line-height: 24px; width: 100%; height: 60px; display: inline-block; position: relative; background-color: transparent; font-family: 'Open Sans', Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
+                                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-control", role = "form" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                <div>
+                                                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Correo electrónico", @required = "", @autofocus = "", @style = "padding: 0px 32px; position: relative; width: 100%; border: none; outline: none; background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 0.87); cursor: inherit; font-style: inherit; font-variant: inherit; font-weight: 600; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; opacity: 1; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 100%; z-index: 100; margin-top: 0px;" })
+                                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="form-group">
+                                                <div>
+                                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Contraseña", @required = "", @autofocus = "", @style = "padding: 0px 32px; position: relative; width: 100%; border: none; outline: none; background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 0.87); cursor: inherit; font-style: inherit; font-variant: inherit; font-weight: 600; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; opacity: 1; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 100%; z-index: 100; margin-top: 0px;" })
+                                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="form-group">
+                                                <div>
+                                                    <input type="submit" value="Iniciar sesión" class="MuiButtonBase-root-155 MuiButton-root-141 P-root-138 MuiButton-raised-148 MuiButton-disabled-153 P-disabled-139" />
+                                                </div>
+                                            </div>
+                                            <p>
+                                                @Html.ActionLink("Registrate como nuevo usuario", "Register")
+                                            </p>
+                                            @* Enable this once you have account confirmation enabled for password reset functionality
+                                                <p>
+                                                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                                </p>*@
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
