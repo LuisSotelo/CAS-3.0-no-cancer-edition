@@ -1,7 +1,87 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿<body>
+    <div class="row" style="background-color:#FFFFFF; height:50px;">
+        <div class="col-md-6" style="background-color: #783377;">
+            <h2 class="" style="margin: 10px 0 10px 0 !important;  color: rgb(255, 255, 255) !important;">
+                Citas
+            </h2>
+        </div>
+        <div class="col-md-4">  <button class="btn-primary" style="float: right;">Nueva Cita </button></div>
+    </div>
+    <br />
+    <form>
+        <div class="form-group">
+            <div class="row" style="background-color:#F4F7F9; height: 50px;">
+                <div class="col-md-8">
+                    <input type="text" placeholder="Buscar" name="searchString" class="form-control form-control-sm" />
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br />
+    <div class="row" style="background-color:#FFFFFF; height: 800px;">
+        <hr />
+        <table class="table-responsive table-hover">
+            <tr>
+                <td>[CD8245] USUARIO 1</td>
+                <td>Especialidad</td>
+                <td>Dia:21/Septiembre/2018</td>
+                <td style="width:7%; padding-right:5px"><button type="button" class="btn btn-primary">Re-Agendar</button></td>
+            </tr>
+        </table>
+    </div>
 
-<h2>Index</h2>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloEvento"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
+                    <input type="hidden" id="txtID" name="txtID" /><br />
+                    <span class="glyphicon glyphicon-calendar" style="color:gray"></span> <input type="hidden" id="txtFecha" name="fecha" /><br />
+
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label>Titulo:</label>
+                            <span class="glyphicon glyphicon-file" style="color:gray"></span>
+                            <input type="text" id="txtTitulo" class="form-control" placeholder="Titulo del Evento" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Hora:</label>
+                            <div class="input-group clockpicker" data-autoclose="true">
+                                <span class="glyphicon glyphicon-time" style="color:gray"></span>
+                                <input type="time" id="txtHora" value="10:30" class="form-control" /><br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label>Descripcion:</label>
+                        <span class="glyphicon glyphicon-time" style="color:gray"></span>
+                        <input type="text" id="txtDescripcion" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>color:</label>
+                        <span class="glyphicon glyphicon-tint" style="color:gray"></span>
+                        <input type="color" id="txtColor" class="form-control" style="height:25px;" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
+                        <button type="button" id="btnModificar" class="btn btn-success">Modificar</button>
+                        <button type="button" id="btnEliminar" class="btn btn-danger">Borrar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
