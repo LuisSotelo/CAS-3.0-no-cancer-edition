@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 
 <body style="background-color:#F8F9FB">
@@ -38,10 +39,11 @@
             <img class="img-responsive" src="~/src/img/logocas.png">
             <ul class="nav nav-divider nav-stacked">
 
-                <li class="h3"><span class="glyphicon glyphicon-calendar" style="color:gray">@Html.ActionLink("CAS", "Index", "Agenda")</span></li>
-                <li class="h3"><span class="glyphicon glyphicon-time" style="color:gray">Citas</span></li>
-                <li class="h3"><span class="glyphicon glyphicon-user" style="color:gray">Usuarios</span></li>
-                <li class="h3"><span class="glyphicon glyphicon-hand-up" style="color:gray">Servicios</span></li>
+                <li class="h3"><span class="glyphicon glyphicon-calendar" style="color:gray"> @Html.ActionLink("Recepcion", "Index", "Recepcion")</span></li>
+                <li class="h3"><span class="glyphicon glyphicon-time" style="color:gray"> @Html.ActionLink("Citas", "Index", "Agenda")</span></li>
+                <li class="h3"><span class="glyphicon glyphicon-user" style="color:gray"> Usuarios</span></li>
+                <li class="h3"><span class="glyphicon glyphicon-hand-up" style="color:gray"> Servicios</span></li>
+                <li class="h3"><span class="glyphicon glyphicon-piggy-bank" style="color:gray"> Caja</span></li>
             </ul>
         </nav>
     </div>
