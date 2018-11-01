@@ -229,6 +229,9 @@
     <Content Include="Scripts\calendar.js" />
     <Content Include="Scripts\fullcalendar.css" />
     <Content Include="Scripts\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar.min.css" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\fullcalendar.print.min.css" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -241,14 +244,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment.min.js" />
-    <Content Include="src\img\00c5296365ee8b3318ff543b06abdf70.svg" />
-    <Content Include="src\img\dis.png" />
     <Content Include="src\img\fond.png" />
-    <Content Include="src\img\logincas.png" />
-    <Content Include="src\img\logo-cas.svg" />
     <Content Include="src\img\logocas.png" />
-    <Content Include="src\img\no.png" />
-    <Content Include="src\img\poc.png" />
     <Content Include="src\img\user.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

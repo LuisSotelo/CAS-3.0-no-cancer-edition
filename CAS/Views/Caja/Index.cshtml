@@ -1,10 +1,8 @@
-﻿<div class="container-fluid" style="background-color:#FFFFFF; height:50px;">
-    <div class="col-md-6" style="background-color: #783377;">
-        <h2 class="" style="margin: 10px 0 10px 0 !important;  color: rgb(255, 255, 255) !important;">
-            CAJA
-        </h2>
-   </div>
+﻿<div class="container-fluid" style="background-color:#F8F9FB; height:50px;">
+    <div class="col-md-4" style="background-color: #783377;">
+        <h2 class="" style="margin: 10px 0 10px 0 !important;  color: rgb(255, 255, 255) !important;">CAJA</h2>
     </div>
+</div>
 <br />
 <form>
     <div class="form-group">
@@ -13,16 +11,14 @@
                 <input type="text" placeholder="Buscar" name="searchString" class="form-control form-control-sm" />
             </div>
             <div class="col-md-2">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                    Buscar
-                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Buscar</button>
             </div>
         </div>
     </div>
 </form>
 <br />
+<hr />
 <div class="container-fluid" style="background-color:#FFFFFF; height: 750px;">
-    <hr />
     <table class="table-responsive table-hover">
         <tr>
             <td>[CD8245] USUARIO 1</td>
@@ -35,10 +31,7 @@
             </td>
         </tr>
     </table>
-  
 </div>
-
-
 <div class="modal fade" id="caja" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -54,28 +47,23 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-
                                     <th scope="col">Servicio</th>
                                     <th scope="col">Fecha</th>
                                     <th scope="col">Importe</th>
-
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-
                                     <td>Cambio de Corazon</td>
                                     <td>31/07/18</td>
                                     <td>$50</td>
                                 </tr>
                                 <tr>
-
                                     <td>Cambio de Corazon</td>
                                     <td>31/07/18</td>
                                     <td>$50</td>
                                 </tr>
                                 <tr>
-
                                     <td>Cambio de Corazon</td>
                                     <td>31/07/18</td>
                                     <td>$50</td>
@@ -84,6 +72,7 @@
                         </table>
                     </div>
                     <div class="row">
+                        <hr />
                         <div class="col-md-6"></div>
                         <div class="col-md-2"><label>Total</label></div>
                         <div class="col-md-4 ">
@@ -92,40 +81,31 @@
                                     <span class="input-group-text">$</span>
                                 </div>
                                 <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-
                             </div>
                         </div>
-
                     </div>
                     <button type="button" class="btn btn-primary">Abonar</button>
-              
-
                     <div class="row">
-                        <div class="col-md-8 ">
-                            <div class="col-md-12"><label>Forma de pago</label></div>
-                            <div>
-                                <div class="col-md-4"><input type="radio" name="optradio" value="1">Efectivo</div>
-                                <div class="col-md-6">
-                                <input onchange="return mostrarOcultar('oculto')" type="radio" name="optradio" value="0" >Tarjeta de Credito/Debito</div>
-
+                        <div class="col-md-12"><label>Forma de pago</label></div>
+                        <div>
+                            <div class="col-md-4">
+                                <input type="radio" name="optradio" value="1">Efectivo
+                            </div>
+                            <div class="col-md-8">
+                                <input onchange="return mostrarOcultar('oculto')" type="radio" name="optradio" value="0">Tarjeta de Credito/Debito
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
             <div class="row" style="display:none" id="oculto">
                 <div class="col-md-6 ">
                     <label for="Select1">Tipo de Tarjeta:</label>
                     <select class="form-control" id="Select1">
                         <option>Visa</option>
                         <option>MasterCard</option>
-                        
                     </select>
                 </div>
-            
                 <div class="col-md-12 ">
                     <div>
                         <input type="text" class="form-control" aria-label="Username" placeholder="Nombre del titular de tarjeta" aria-describedby="basic-addon1">
@@ -136,7 +116,6 @@
                         <input type="text" class="form-control" aria-label="Username" placeholder="Numero de Tarjeta" aria-describedby="basic-addon1">
                     </div>
                 </div>
-
                 <div class="col-md-4 ">
                     <div>
                         <input type="text" class="form-control" id="expirationDate"
@@ -151,15 +130,14 @@
                     </div>
                 </div>
             </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Pagar</button>
-
-                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Pagar</button>
             </div>
+        </div>
     </div>
+</div>
     <script>
-        
         function mostrarOcultar(id) {
             var elemento = document.getElementById(id);
             if (!elemento) {
@@ -169,11 +147,7 @@
                 elemento.style.display = "block"
             } else {
                 elemento.style.display = "none"
-           
             };
             return true;
-
         };
-        
     </script>
-   
