@@ -13,9 +13,6 @@ namespace CAS.Controllers
         {
             return View();
         }
-        public ActionResult NewPersona()
-        {
-            return View();
-        }
+      
     }
 }

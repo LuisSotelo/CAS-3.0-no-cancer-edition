@@ -1,0 +1,45 @@
+﻿<div class="container-fluid" style="background-color:#FFFFFF; height:50px;">
+    <div class="col-md-6" style="background-color: #783377;">
+        <h2 class="" style="margin: 10px 0 10px 0 !important;  color: rgb(255, 255, 255) !important;">
+           Agenda 
+        </h2>
+    </div>
+    <div class="col-md-4">  <button class="btn btn-success" style="float: right;">Nueva Cita </button></div>
+</div>
+<br />
+<form>
+    <div class="form-group">
+        <div class="row" style="background-color:#F4F7F9; height: 50px;">
+            <div class="col-md-7">
+                <input type="text" placeholder="Buscar" name="searchString" class="form-control form-control-sm" />
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<br />
+<div class="control-label" style="background-color:#FFFFFF; height:50px;">
+ 
+    <div class="col-md-8">  <h3>@DateTime.Today </h3></div>
+</div>
+<br />
+<div class="container-fluid" style="background-color:#FFFFFF;">
+    <hr />
+    <table class="table-responsive table-hover">
+        <tr>
+            <td>[CD8245] USUARIO 1</td>
+            <td>Especialidad</td>
+            <td>12:00 PM</td>
+            @using (Html.BeginForm("NewPersona", "TrabajoSocial", FormMethod.Post))
+            {
+            <td style="width:5%; padding-right:5px">  <button type="submit" class="btn btn-success" title="Action description">Consultar</button></td>
+            }
+         
+            <td style="width:7%; padding-right:5px"><button type="button" class="btn btn-danger">Cancelar</button></td>
+        </tr>
+    </table>
+</div>

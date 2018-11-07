@@ -3,12 +3,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="~/Scripts/fullcalendar.css" rel="stylesheet" />
-    <link href="~/Scripts/fullcalendar.print.min.css" rel="stylesheet" />
+    <link href="~/Scripts/fullcalendar.min.css" rel="stylesheet" />
     <script src="~/Scripts/jquery.min.js"></script>
     <script src="~/Scripts/moment.min.js"></script>
     <script src="~/Scripts/fullcalendar.min.js"></script>
- 
+    <script src="~/Scripts/es.js"></script>
 
 </head>
 <div class="container-fluid" style="background-color:#FFFFFF; height: 50px;">
@@ -16,11 +15,11 @@
         <h2 class="" style="margin: 10px 0 10px 0 !important;  color: rgb(255, 255, 255) !important;">Recepcion</h2>
     </div>
     <div class="col-md-4">
-     
+
     </div>
     <div class="col-md-2 text-center">
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Pre-Registro">
-          Pre-Registro
+            Pre-Registro
         </button>
     </div>
 </div>
@@ -38,7 +37,7 @@
         </div>
     </div>
 </form>
-<div class="row" style="background-color:#FFFFFF; height: 150px;">
+<div class="row" style="background-color:#FFFFFF; height: 80px;">
     <div class="col-md-4">
         <label>Especialidad:</label>
         <select style="border-radius:5px" ; id="presentado">
@@ -56,41 +55,89 @@
         </select>
     </div>
 </div>
-<div class="row" style="background-color:#FFFFFF; height: 800px;">
-    <div class="col-md-4">
-        <table class="table table-dark">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">No.Exp</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Servicio</th>
-                    <th scope="col">Horario</th>
-                    <th scope="col">Estado de Cita</th>
-                    <th scope="col">Hora Inicio</th>
-                    <th scope="col">Hora Fin</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>31010</td>
-                    <td>Manuel</td>
-                    <td>Primera Vez</td>
-                    <td>8:00</td>
-                    <td>Citado</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+<div class="row" style="background-color:#FFFFFF; ">
+    <div class="col-md-5 ">
+        <div class="col-md-12">
+            <div class="row">
+                <div id='calendar'></div>
+            </div>
+        </div>
     </div>
+    <div class="col-md-4">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3" style="background-color:#f2704c; height:25px;">
 
-    <div class="col-md-1"></div>
-    <div class="col-sm-4 ">
-        <div id='calendar'></div>
+                </div>
+                <div class="col-md-9">
+                    <label class="control-label" style="color:#303641; font-weight:bold;">Sin Disponibilidad</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" style="background-color:#d2da5c; height:25px;">
+
+                </div>
+                <div class="col-md-9">
+                    <label class="control-label" style="color:#303641; font-weight:bold;">Baja Disponibilidad</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" style="background-color:#b2d487; height:25px;">
+
+                </div>
+                <div class="col-md-9">
+                    <label class="control-label" style="color:#303641; font-weight:bold;">Alta Disponibilidad</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cold-md-12">
+            <div class="row" id="dFechaSeleccionada" style="margin-top:25px;">
+                <b><label id="lblFechaSeleccionada" class="control-label">Has seleccionado la fecha:</label></b>
+            </div>
+            <!-- Modal -->
+
+            <div class="row" style="background-color:#FFFFFF; ">
+
+                <div class="col-md-4">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">No.Exp</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Servicio</th>
+                                <th scope="col">Horario</th>
+                                <th scope="col">Estado de Cita</th>
+                                <th scope="col">Hora Inicio</th>
+                                <th scope="col">Hora Fin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>31010</td>
+                                <td>Manuel</td>
+                                <td>Primera Vez</td>
+                                <td>8:00</td>
+                                <td>Citado</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 </div>
+
+
+
+
 <!-- Modales -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -163,10 +210,9 @@
         </div>
     </div>
 </div>
+
 <script>
-
     $(document).ready(function () {
-
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
@@ -183,47 +229,6 @@
                     start: '2018-03-01',
                 },
                 {
-                    title: 'Long Event',
-                    start: '2018-03-07',
-                    end: '2018-03-10'
-                },
-                {
-                    id: 999,
-                    title: 'Repeating Event',
-                    start: '2018-03-09T16:00:00'
-                },
-                {
-                    id: 999,
-                    title: 'Repeating Event',
-                    start: '2018-03-16T16:00:00'
-                },
-                {
-                    title: 'Conference',
-                    start: '2018-03-11',
-                    end: '2018-03-13'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2018-03-12T10:30:00',
-                    end: '2018-03-12T12:30:00'
-                },
-                {
-                    title: 'Lunch',
-                    start: '2018-03-12T12:00:00'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2018-03-12T14:30:00'
-                },
-                {
-                    title: 'Happy Hour',
-                    start: '2018-03-12T17:30:00'
-                },
-                {
-                    title: 'Dinner',
-                    start: '2018-03-12T20:00:00'
-                },
-                {
                     title: 'Birthday Party',
                     start: '2018-03-13T07:00:00'
                 },
@@ -232,9 +237,21 @@
                     url: 'http://google.com/',
                     start: '2018-03-28'
                 }
-            ]
+            ],
+            dayClick: function (date, jsEvent, view) {
+                alert(date)
+                $(this).css('background-color', 'green');
+            },
+            hiddenDays: [6, 7,],
+
+            businessHours: {
+                // days of week. an array of zero-based day of week integers (0=Sunday)
+                dow: [1, 2, 3, 4, 5], // Monday - Thursday
+
+                start: '08:00', // a start time (10am in this example)
+                end: '15:00', // an end time (6pm in this example)
+            },
+
         });
-
     });
-
 </script>

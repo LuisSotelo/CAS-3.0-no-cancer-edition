@@ -200,6 +200,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RecepcionController.cs" />
+    <Compile Include="Controllers\TrabajoSocialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -227,6 +228,7 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\es.js" />
     <Content Include="Scripts\fullcalendar.css" />
     <Content Include="Scripts\fullcalendar.js" />
     <Content Include="Scripts\fullcalendar.min.css" />
@@ -283,8 +285,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Agenda\Index.cshtml" />
     <Content Include="Views\Recepcion\Index.cshtml" />
-    <Content Include="Views\Agenda\NewPersona.cshtml" />
+    <Content Include="Views\TrabajoSocial\NewPersona.cshtml" />
     <Content Include="Views\Caja\Index.cshtml" />
+    <Content Include="Views\TrabajoSocial\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
